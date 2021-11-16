@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stealthzer | Doomsday Database</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link href='boxicons_2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="screen active" id="logon-screen">
+    <div class="center-of-screen">
+      <div class="user-profile">
+        <div class="account-picture highlight">
+          <img src="images/profile.jpg">
+        </div>
+        <div class="account-name">Stealthzer | Doomsday Database</div>
+        <div class="logon-password">
+          <input class="inline-block" id="account-password" placeholder="Password" type="password"/>
+          <div class="logon_screen-password"><input class="inline-block" id="account-password" placeholder="Password" type="password"/></div>
+          <h3>Hint: 123456</h3>
+        </div>
+        <button onclick="loginFunc()" class="arrow-button circle-button primary-button-background" type="submit"><i class='bx bx-right-arrow-alt'></i>
+        </button>
+      </div>
+      <div class="error-message login-display">
+          <div id="MyClockDisplay3" class="clock" onload="showTime3()"></div>
+          <h1>Monday, November 8</h1>
+          <button onclick="toggleLoginError()">Login</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="context-menu">
+      <div class="item droping_context">View<i class='bx bx-chevron-right'></i></div>
+      <div class="droping-context">
+        <div class="item" onclick="largeicons()"><div class="context_circle context_circle1"></div>Large icons</div>
+        <div class="item" onclick="mediumicons()"><div class="context_circle context_circle2"></div>Medium icons</div>
+        <div class="item" onclick="smallicons()"><div class="context_circle context_circle3"></div>Small icons</div>
+      </div>
+      <div class="item droping_context2">Short by<i class='bx bx-chevron-right'></i></div>
+      <div class="droping-context2">
+        <div class="item">Name</div>
+        <div class="item">Size</div>
+        <div class="item">Item type</div>
+        <div class="item">Date modified</div>
+        <hr>
+        <div class="item">Align icons to grid</div>
+        <div class="item"><i class='bx bx-check'></i>Auto arrange icons</div>
+      </div>
+      <div class="item" onmousedown="refresh()" onmouseup="unrefresh()">Refresh</div>
+      <hr>
+      <div class="item">Paste</div>
+      <div class="item">Paste shortcut</div>
+      <div class="item">Undo delete</div>
+      <div class="item" onclick="change()">Next desktop background</div>
+      <div class="item">Open in windows terminal</div>
+      <hr>
+      <div class="item droping_context3">New<i class='bx bx-chevron-right'></i></div>
+      <div class="droping-context3">
+        <div class="item">Folder</div>
+        <div class="item">Shortcut</div>
+        <hr>
+        <div class="item">Rich Text Document</div>
+        <div class="item">Text Document</div>
+      </div>
+      <hr>
+      <div class="item">Screen resolution</div>
+      <div class="item">Personalise</div>
+    </div>
+    <div class="main-screen">
+      <div class="start-menu">
+        <div class="start-top">
+          <!-- <div class="start-top2">
+          </div> -->
+          <div class="start-icons">
+            <div class="start-app11">
+              <h2>Pinned</h2>
+              <div class="start-app start-app-blue">
+                <label for=""><img src="icons/edge.png"></label>
+                <label for=""><h1>Edge</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/winWord.png"></label>
+                <label for=""><h1>Word</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/powerpoint.png"></label>
+                <label for=""><h1>PowerPoint</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/onenote.png"></label>
+                <label for=""><h1>OneNote</h1></label>
+              </div>
+              <div class="start-app start-app-blue">
+                <label for=""><img src="icons/mail.png"></label>
+                <label for=""><h1>Mail</h1></label>
+              </div>
+              <div class="start-app start-app-blue">
+                <label for=""><img src="icons/todo.png"></label>
+                <label for=""><h1>To Do</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/store.png"></label>
+                <label for=""><h1>Store</h1></label>
+              </div>
+              <div class="start-app start-app-blue">
+                <label for=""><img src="icons/photos.png"></label>
+                <label for=""><h1>Photos</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/yphone.png"></label>
+                <label for=""><h1>Your Phone</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/notepad.png"></label>
+                <label for=""><h1>Notepad</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/board.png"></label>
+                <label for=""><h1>White Board</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/calculator.png"></label>
+                <label for=""><h1>Calculator</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/spotify.png"></label>
+                <label for=""><h1>Spotify</h1></label>
+              </div>
+              <div class="start-app start-app-blue">
+                <label for=""><img src="icons/twitter.png"></label>
+                <label for=""><h1>Twitter</h1></label>
+              </div>
+              <div class="start-app start-app-blue active-app" data-window="c">
+                <label for=""><img src="icons/code.png"></label>
+                <label for=""><h1>Vs Code</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/terminal.png"></label>
+                <label for=""><h1>Terminal</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/github.png"></label>
+                <label for=""><h1>Github</h1></label>
+              </div>
+              <div class="start-app">
+                <label for=""><img src="icons/discord.png"></label>
+                <label for=""><h1>Discord</h1></label>
+              </div>
+            </div>
+            <div class="start-app22">
+              <h2>Recommended</h2>
+              <div class="reco-app">
+                <label for=""><img src="icons/mail.png"></label>
+                <label for=""><h1>Mail</h1></label>
+              </div>
+              <div class="reco-app">
+                <label for=""><img src="icons/github.png"></label>
+                <label for=""><h1>Github</h1></label>
+              </div>
+              <div class="reco-app">
+                <label for=""><img src="icons/twitter.png"></label>
+                <label for=""><h1>Twitter</h1></label>
+              </div>
+              <div class="reco-app">
+                <label for="code-editor"><img src="icons/code.png"></label>
+                <label for="code-editor"><h1>Vs Code</h1></label>
+              </div>
+              <div class="reco-app">
+                <label for=""><img src="icons/terminal.png"></label>
+                <label for=""><h1>Terminal</h1></label>
+              </div>
+              <div class="reco-app">
+                <label for=""><img src="icons/spotify.png"></label>
+                <label for=""><h1>Spotify</h1></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="start-bottom">
+          <div class="start-icons">
+            <img src="images/profile.jpg" alt="profile">
+            <h1>Stealthzer | Doomsday Database</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6E6F6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+          </div>
+        </div>
+      </div>
+      <div class="taskbar-search">
+        <div class="taskbar_search">
+          <div class="input search" style="margin-top: 10px;">
+            <input type="submit" value="">
+            <input class="input__inner" type="text" name="my_input" placeholder="Search something ...">
+            <span class="input__border"></span>
+          </div>
+          <ul>
+            <li>All</li>
+            <li>Apps</li>
+            <li>Documents</li>
+            <li>Web</li>
+            <li>More</li>
+          </ul>
+          <h3>Top Apps</h3>
+          <div class="search_top-app margin-left1">
+            <img src="icons/terminal.png" alt="">
+            <h4>Terminal</h4>
+          </div>
+          <div class="search_top-app margin-left">
+            <img src="icons/github.png" alt="">
+            <h4>Github</h4>
+          </div>
+          <div class="search_top-app margin-left">
+            <img src="icons/code.png" alt="">
+            <h4>Vs Code</h4>
+          </div>
+          <div class="search_top-app margin-left">
+            <img src="icons/spotify.png" alt="">
+            <h4>Spotify</h4>
+          </div>
+          <h3>Quick Searches</h3>
+          <div class="search_list">
+            <i class='bx bx-history'></i><h6>Today in history</h6>
+          </div>
+          <div class="search_list">
+            <i class='bx bx-film' ></i><h6>New movies</h6>
+          </div>
+          <div class="search_list">
+            <i class='bx bx-news' ></i><h6>Top news</h6>
+          </div>
+          <div class="search_list">
+            <i class='bx bx-line-chart-down'></i><h6>Markets today</h6>
+          </div>
+          <!-- <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div>
+          <h1>A</h1>
+          <div class="search-item">
+            <img src="icons/onenote.png" alt="">
+            <h2>One Note</h2>
+          </div> -->
+        </div>
+      </div>
+      <div class="widget-menu">
+        <div class="widget_menu">
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-large">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-large">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-large">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-large">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-small">
+          </div>
+          <div class="widget_menu-large">
+          </div>
+        </div>
+      </div>
+      <div class="settings-menu">
+        <div class="settings__title"><svg width="20" height="20" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 9.50006C11.5147 9.50006 9.5 11.5148 9.5 14.0001C9.5 16.4853 11.5147 18.5001 14 18.5001C15.3488 18.5001 16.559 17.9066 17.3838 16.9666C18.0787 16.1746 18.5 15.1365 18.5 14.0001C18.5 13.5401 18.431 13.0963 18.3028 12.6784C17.7382 10.8381 16.0253 9.50006 14 9.50006ZM11 14.0001C11 12.3432 12.3431 11.0001 14 11.0001C15.6569 11.0001 17 12.3432 17 14.0001C17 15.6569 15.6569 17.0001 14 17.0001C12.3431 17.0001 11 15.6569 11 14.0001Z" fill="currentColor"></path><path d="M21.7093 22.3948L19.9818 21.6364C19.4876 21.4197 18.9071 21.4515 18.44 21.7219C17.9729 21.9924 17.675 22.4693 17.6157 23.0066L17.408 24.8855C17.3651 25.273 17.084 25.5917 16.7055 25.682C14.9263 26.1061 13.0725 26.1061 11.2933 25.682C10.9148 25.5917 10.6336 25.273 10.5908 24.8855L10.3834 23.0093C10.3225 22.4731 10.0112 21.9976 9.54452 21.7281C9.07783 21.4586 8.51117 21.4269 8.01859 21.6424L6.29071 22.4009C5.93281 22.558 5.51493 22.4718 5.24806 22.1859C4.00474 20.8536 3.07924 19.2561 2.54122 17.5137C2.42533 17.1384 2.55922 16.7307 2.8749 16.4977L4.40219 15.3703C4.83721 15.0501 5.09414 14.5415 5.09414 14.0007C5.09414 13.4598 4.83721 12.9512 4.40162 12.6306L2.87529 11.5051C2.55914 11.272 2.42513 10.8638 2.54142 10.4882C3.08038 8.74734 4.00637 7.15163 5.24971 5.82114C5.51684 5.53528 5.93492 5.44941 6.29276 5.60691L8.01296 6.36404C8.50793 6.58168 9.07696 6.54881 9.54617 6.27415C10.0133 6.00264 10.3244 5.52527 10.3844 4.98794L10.5933 3.11017C10.637 2.71803 10.9245 2.39704 11.3089 2.31138C12.19 2.11504 13.0891 2.01071 14.0131 2.00006C14.9147 2.01047 15.8128 2.11485 16.6928 2.31149C17.077 2.39734 17.3643 2.71823 17.4079 3.11017L17.617 4.98937C17.7116 5.85221 18.4387 6.50572 19.3055 6.50663C19.5385 6.507 19.769 6.45838 19.9843 6.36294L21.7048 5.60568C22.0626 5.44818 22.4807 5.53405 22.7478 5.81991C23.9912 7.1504 24.9172 8.74611 25.4561 10.487C25.5723 10.8623 25.4386 11.2703 25.1228 11.5035L23.5978 12.6297C23.1628 12.95 22.9 13.4586 22.9 13.9994C22.9 14.5403 23.1628 15.0489 23.5988 15.3698L25.1251 16.4965C25.441 16.7296 25.5748 17.1376 25.4586 17.5131C24.9198 19.2536 23.9944 20.8492 22.7517 22.1799C22.4849 22.4657 22.0671 22.5518 21.7093 22.3948ZM16.263 22.1966C16.4982 21.4685 16.9889 20.8288 17.6884 20.4238C18.5702 19.9132 19.6536 19.8547 20.5841 20.2627L21.9281 20.8526C22.791 19.8538 23.4593 18.7013 23.8981 17.4552L22.7095 16.5778L22.7086 16.5771C21.898 15.98 21.4 15.0277 21.4 13.9994C21.4 12.9719 21.8974 12.0195 22.7073 11.4227L22.7085 11.4218L23.8957 10.545C23.4567 9.2988 22.7881 8.14636 21.9248 7.1477L20.5922 7.73425L20.5899 7.73527C20.1844 7.91463 19.7472 8.00722 19.3039 8.00663C17.6715 8.00453 16.3046 6.77431 16.1261 5.15465L16.1259 5.15291L15.9635 3.69304C15.3202 3.57328 14.6677 3.50872 14.013 3.50017C13.3389 3.50891 12.6821 3.57367 12.0377 3.69328L11.8751 5.15452C11.7625 6.16272 11.1793 7.05909 10.3019 7.56986C9.41937 8.0856 8.34453 8.14844 7.40869 7.73694L6.07273 7.14893C5.20949 8.14751 4.54092 9.29983 4.10196 10.5459L5.29181 11.4233C6.11115 12.0269 6.59414 12.9837 6.59414 14.0007C6.59414 15.0173 6.11142 15.9742 5.29237 16.5776L4.10161 17.4566C4.54002 18.7044 5.2085 19.8585 6.07205 20.8587L7.41742 20.2682C8.34745 19.8613 9.41573 19.9215 10.2947 20.4292C11.174 20.937 11.7593 21.832 11.8738 22.84L11.8744 22.8445L12.0362 24.3088C13.3326 24.5638 14.6662 24.5638 15.9626 24.3088L16.1247 22.8418C16.1491 22.6217 16.1955 22.4055 16.263 22.1966Z" fill="currentColor"></path></svg><h1>Settings</h1></div>
+          <div class="settings__inner">
+            <div class="settings__header">
+              <div class="about">
+                <img src="images/profile.jpg" alt="avatar">
+                <div class="ab">
+                  <div class="name">Stealthzer | Doomsday Database</div>
+                </div>
+              </div>
+              <div class="item active">System</div>
+              <div class="item">Bluetooth & devices</div>
+              <div class="item">Network & internet</div>
+              <div class="item">Personalization</div>
+              <div class="item">Apps</div>
+              <div class="item">Accounts</div>
+              <div class="item">Gaming</div>
+              <div class="item">Accesibility</div>
+              <div class="item">Privacy & security</div>
+            <div class="header-footer">
+              <div class="item">
+                <svg width="20" height="20" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g fill="currentColor" fill-rule="nonzero">            <path d="M17.0836,5.43173 C17.3048,4.92564 17.8943,4.69463 18.4004,4.91575 C22.2833,6.61226 25,10.4878 25,15 C25,21.0751 20.0751,26 14,26 C7.92487,26 3,21.0751 3,15 C3,10.4878 5.71673,6.61226 9.59963,4.91575 C10.1057,4.69463 10.6952,4.92564 10.9164,5.43173 C11.1375,5.93782 10.9065,6.52733 10.4004,6.74845 C7.21965,8.13817 5,11.311 5,15 C5,19.9706 9.02944,24 14,24 C18.9706,24 23,19.9706 23,15 C23,11.311 20.7803,8.13817 17.5996,6.74845 C17.0935,6.52733 16.8625,5.93782 17.0836,5.43173 Z M14,2 C14.51285,2 14.9355092,2.38604429 14.9932725,2.88337975 L15,3 L15,12 C15,12.5523 14.5523,13 14,13 C13.48715,13 13.0644908,12.613973 13.0067275,12.1166239 L13,12 L13,3 C13,2.44772 13.4477,2 14,2 Z"></path>        </g>    </g></svg>
+              </div>
+              <div class="item">
+                <svg width="20" height="20" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 9.50006C11.5147 9.50006 9.5 11.5148 9.5 14.0001C9.5 16.4853 11.5147 18.5001 14 18.5001C15.3488 18.5001 16.559 17.9066 17.3838 16.9666C18.0787 16.1746 18.5 15.1365 18.5 14.0001C18.5 13.5401 18.431 13.0963 18.3028 12.6784C17.7382 10.8381 16.0253 9.50006 14 9.50006ZM11 14.0001C11 12.3432 12.3431 11.0001 14 11.0001C15.6569 11.0001 17 12.3432 17 14.0001C17 15.6569 15.6569 17.0001 14 17.0001C12.3431 17.0001 11 15.6569 11 14.0001Z" fill="currentColor"></path><path d="M21.7093 22.3948L19.9818 21.6364C19.4876 21.4197 18.9071 21.4515 18.44 21.7219C17.9729 21.9924 17.675 22.4693 17.6157 23.0066L17.408 24.8855C17.3651 25.273 17.084 25.5917 16.7055 25.682C14.9263 26.1061 13.0725 26.1061 11.2933 25.682C10.9148 25.5917 10.6336 25.273 10.5908 24.8855L10.3834 23.0093C10.3225 22.4731 10.0112 21.9976 9.54452 21.7281C9.07783 21.4586 8.51117 21.4269 8.01859 21.6424L6.29071 22.4009C5.93281 22.558 5.51493 22.4718 5.24806 22.1859C4.00474 20.8536 3.07924 19.2561 2.54122 17.5137C2.42533 17.1384 2.55922 16.7307 2.8749 16.4977L4.40219 15.3703C4.83721 15.0501 5.09414 14.5415 5.09414 14.0007C5.09414 13.4598 4.83721 12.9512 4.40162 12.6306L2.87529 11.5051C2.55914 11.272 2.42513 10.8638 2.54142 10.4882C3.08038 8.74734 4.00637 7.15163 5.24971 5.82114C5.51684 5.53528 5.93492 5.44941 6.29276 5.60691L8.01296 6.36404C8.50793 6.58168 9.07696 6.54881 9.54617 6.27415C10.0133 6.00264 10.3244 5.52527 10.3844 4.98794L10.5933 3.11017C10.637 2.71803 10.9245 2.39704 11.3089 2.31138C12.19 2.11504 13.0891 2.01071 14.0131 2.00006C14.9147 2.01047 15.8128 2.11485 16.6928 2.31149C17.077 2.39734 17.3643 2.71823 17.4079 3.11017L17.617 4.98937C17.7116 5.85221 18.4387 6.50572 19.3055 6.50663C19.5385 6.507 19.769 6.45838 19.9843 6.36294L21.7048 5.60568C22.0626 5.44818 22.4807 5.53405 22.7478 5.81991C23.9912 7.1504 24.9172 8.74611 25.4561 10.487C25.5723 10.8623 25.4386 11.2703 25.1228 11.5035L23.5978 12.6297C23.1628 12.95 22.9 13.4586 22.9 13.9994C22.9 14.5403 23.1628 15.0489 23.5988 15.3698L25.1251 16.4965C25.441 16.7296 25.5748 17.1376 25.4586 17.5131C24.9198 19.2536 23.9944 20.8492 22.7517 22.1799C22.4849 22.4657 22.0671 22.5518 21.7093 22.3948ZM16.263 22.1966C16.4982 21.4685 16.9889 20.8288 17.6884 20.4238C18.5702 19.9132 19.6536 19.8547 20.5841 20.2627L21.9281 20.8526C22.791 19.8538 23.4593 18.7013 23.8981 17.4552L22.7095 16.5778L22.7086 16.5771C21.898 15.98 21.4 15.0277 21.4 13.9994C21.4 12.9719 21.8974 12.0195 22.7073 11.4227L22.7085 11.4218L23.8957 10.545C23.4567 9.2988 22.7881 8.14636 21.9248 7.1477L20.5922 7.73425L20.5899 7.73527C20.1844 7.91463 19.7472 8.00722 19.3039 8.00663C17.6715 8.00453 16.3046 6.77431 16.1261 5.15465L16.1259 5.15291L15.9635 3.69304C15.3202 3.57328 14.6677 3.50872 14.013 3.50017C13.3389 3.50891 12.6821 3.57367 12.0377 3.69328L11.8751 5.15452C11.7625 6.16272 11.1793 7.05909 10.3019 7.56986C9.41937 8.0856 8.34453 8.14844 7.40869 7.73694L6.07273 7.14893C5.20949 8.14751 4.54092 9.29983 4.10196 10.5459L5.29181 11.4233C6.11115 12.0269 6.59414 12.9837 6.59414 14.0007C6.59414 15.0173 6.11142 15.9742 5.29237 16.5776L4.10161 17.4566C4.54002 18.7044 5.2085 19.8585 6.07205 20.8587L7.41742 20.2682C8.34745 19.8613 9.41573 19.9215 10.2947 20.4292C11.174 20.937 11.7593 21.832 11.8738 22.84L11.8744 22.8445L12.0362 24.3088C13.3326 24.5638 14.6662 24.5638 15.9626 24.3088L16.1247 22.8418C16.1491 22.6217 16.1955 22.4055 16.263 22.1966Z" fill="currentColor"></path></svg>
+              </div>
+            </div>
+          </div>
+          <div class="settings__content">
+            <div class="h1">System</div>
+            <div>
+              System Settings 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="quick-settings">
+        <div class="quick-data">
+          <div class="quick-item-div">
+            <div class="quick-item">
+              <img src="icons/wifi.png" alt="">
+            </div>
+            <h1>WiFi</h1>
+          </div>
+          <div class="quick-item-div">
+            <div class="quick-item">
+              <img src="icons/bluetooth.png" alt="">
+            </div>
+            <h1>Bluetooth</h1>
+          </div>
+          <div class="quick-item-div">
+            <div class="quick-item">
+              <img src="icons/airplane.png" alt="">
+            </div>
+            <h1>Airplane Mode</h1>
+          </div>
+          <div class="quick-item-div">
+            <div class="quick-item">
+              <img src="icons/saver.png" alt="">
+            </div>
+            <h1>Battery Saver</h1>
+          </div>
+          <div class="quick-item-div">
+            <div class="quick-item">
+              <img src="icons/moon.png" alt="">
+            </div>
+            <h1>Focus Assest</h1>
+          </div>
+          <div class="quick-item-div">
+            <div class="quick-item">
+              <img src="icons/location.png" alt="">
+            </div>
+            <h1>Location</h1>
+          </div>
+          <div class="quick-item-div">
+            <div class="quick-item">
+              <img src="icons/nightlight.png" alt="">
+            </div>
+            <h1>Night Light</h1>
+          </div>
+          <div class="quick-item-div">
+            <div class="quick-item">
+              <img src="icons/connect.png" alt="">
+            </div>
+            <h1>Connect</h1>
+          </div>
+          <div class="quick-item-div">
+            <div class="quick-item">
+              <img src="icons/project.png" alt="">
+            </div>
+            <h1>Project</h1>
+          </div>
+          <div class="quick-input-div">
+            <div><img src="icons/brightness.png" ><input type="range" min="15" max="100" value="100" id="range"></div>
+            <div><img src="icons/audio3.png" alt=""><input type="range" min="15" max="100" value="100"></div>
+          </div>
+        </div>
+      </div>
+      <div class="taskbar-apps">
+        <img src="icons/One Drive.ico" alt="One Drive">
+        <img src="icons/powerpoint.png" alt="powerpoint">
+        <img src="icons/History.ico" alt="History">
+        <img src="icons/discord.png" alt="discord">
+        <img src="icons/Help.ico" alt="Help">
+        <img src="icons/Users.ico" alt="Users">
+        <img src="icons/onenote.png" alt="">
+        <img src="icons/discord.png" alt="">
+      </div>
+      <div class="calenndar">
+        <button id="btnPrev" type="button"><i class='bx bx-chevron-left'></i></button>
+        <button id="btnNext" type="button"><i class='bx bx-chevron-right'></i></button>
+        <div id="divCal"></div>
+      </div>
+      <div class="footer">
+        <h1>Windows 11</h1>
+        <h2>By Stealthzer | Doomsday Database</h2>
+        <h3>Version 1.0</h3>
+      </div>
+      <!-- <div class="about-window">
+        <div class="about_window">
+          <div class="about_window-top">
+            About
+          </div>
+        </div>
+      </div> -->
+      <div id="windows">
+        <input type="checkbox" name="" id="window-maxamize">
+        <input type="checkbox" name="" id="window-minimize">
+        <div class="window file-explorer" id="mydiv" data-window="file-explorer">
+          <section class="main-windows" id="overlay-computer">
+            <header class="windows-header">
+              <div id="mydivheader" class="windows-header-bar d-flex items-start justify-between" >
+                <div class="left drag-window d-flex items-start flex-1">
+                  <div class="windows-header-bar-folders d-flex items-center">
+                    <div class="windows-header-bar-folder-1">
+                      <img src="icons/file_explorer.ico" alt="">
+                      <h2>File Explorer</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="windows-close-buttons d-flex items-center">
+                    <span class="windows-minimize-btn" onclick="closeopencom()"></span>
+                    <span class="windows-maximize-btn" id="uppercom" onclick="upercom()"></span>
+                    <span class="windows-maximize-button" id="lowercom" onclick="returncom()"><img src="icons/maximize.png" alt="" onclick="returncom()" ></span>
+                    <span class="windows-close-btn" onclick="closeopencom()"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="windows-header-menu-bar d-flex items-center justify-between">
+                <ul class="windows-header-nav-menu d-flex items-center">
+                  <li class="menu-file active">
+                    <a href="#">File</a>
+                  </li>
+                  <li class="menu-home">
+                    <a href="#">Home</a>
+                  </li>
+                  <li class="menu-share">
+                    <a href="#">Share</a>
+                  </li>
+                  <li class="menu-view">
+                    <a href="#">View</a>
+                  </li>
+                  <li class="menu-drive-tools">
+                    <a href="#">Drive Tools</a>
+                  </li>
+                </ul>
+                <div class="windows-header-menu-bar-right d-flex items-center">
+                  <i class="windows-header-menu-ribbon-toggle la la-angle-down"></i>
+                  <span class="windows-header-menu-help">?</span>
+                </div>
+              </div>
+              <div class="windows-header-controls-panel d-flex items-center justify-between">
+                <div class="windows-header-arrows-controls d-flex items-center flex-none">
+                  <i class='bx bx-left-arrow-alt'></i>
+                  <i class='bx bx-right-arrow-alt' ></i>
+                  <i class='bx bx-chevron-down' ></i>
+                  <i class='bx bx-up-arrow-alt' ></i>
+                </div>
+                <div class="windows-header-folder-breadcrumb-panel d-flex justify-between items-center flex-1">
+                  <div class="left-panel d-flex items-center">
+                    <img src="icons/Computer.ico" alt="Disk">
+                    <i class="la la-angle-right"></i>
+                    <span class="folder-name">This PC</span>
+                    <i class="la la-angle-right"></i>
+                    <span class="folder-name">Local Disk (C:)</span>
+                  </div>
+                  <div class="right-panel d-flex items-center">
+                    <i class="windows-header-folder-breadcrumb-preview-location bx bx-chevron-down"></i>
+                    <span><svg class="windows-header-folder-breadcrumb-refresh" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rotate-cw"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg></span>
+                  </div>
+                </div>
+                <div class="windows-header-search-form">
+                  <i class="windows-header-search-icon las la-search"></i>
+                  <input type="search" name="s" placeholder="Search Local Disk (C:)">
+                </div>
+              </div>
+            </header>
+            <div class="windows-body d-flex">
+              <div class="windows-sidebar flex-none">
+                <ul class="windows-sidebar-menu">
+                  <li>
+                    <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                    <a href="#"><img src="icons/quick_access.ico" alt=""> Quick access</a>
+                  </li>
+                  <li>
+                    <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                    <a href="#"><img src="icons/One Drive.ico" alt=""> OneDrive</a>
+                  </li>
+                  <li>
+                    <i class="windows-sidebar-menu-icon la la-angle-down"></i>
+                    <a href="#"><img src="icons/Computer.ico" alt=""> This PC</a>
+                    <ul>
+                      <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="bdtanbir/windows-explore/blob/main/assets/images/3d-object-icon.png" alt=""> 3D Objects</a>
+                      </li>
+                      <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="icons/Desktop.ico" alt=""> Desktop</a>
+                      </li>
+                      <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="icons/Libray Documents.ico" alt=""> Documents</a>
+                      </li>
+                      <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="icons/Downloads.ico" alt=""> Downloads</a>
+                      </li>
+                      <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="icons/Library Music.ico" alt=""> Music</a>
+                      </li>
+                      <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="icons/Libray Pictures.ico" alt=""> Pictures</a>
+                      </li>
+                      <li>
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="icons/Library Videos.ico" alt=""> Videos</a>
+                      </li>
+                      <li class="active">
+                        <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                        <a href="#"><img src="icons/Windows 10 Drive Icon.ico" alt=""> Local Disk (C:)</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <i class="windows-sidebar-menu-icon la la-angle-right"></i>
+                    <a href="#"><img src="icons/network.ico" alt=""> Network</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="windows-content-area flex-1">
+                <!-- <div class="file-explorer-folders">
+                  <i class='bx bx-chevron-down' ></i>
+                  <h1>Folders</h1>
+                  <label for=""></label>
+                </div> -->
+                <div class="windows-content-sort-filter d-flex items-center justify-between">
+                  <span class="sort-name">Name</span>
+                  <span class="sort-date-modified flex-auto">Date modified</span>
+                  <span class="sort-type">Type</span>
+                  <span class="sort-size">Size</span>
+                </div>
+                <div class="windows-folder-lists">
+                  <div class="windows-folder-list d-flex items-center justify-between hidden-folder">
+                    <div class="folder-name d-flex items-center"><img src="icons/Custom Default (No Shadow).ico" alt=""> $WINDOWS.~BT</div>
+                    <div class="folder-date flex-auto">7/15/2021 9:26 AM</div>
+                    <div class="folder-type">File Folder</div>
+                    <div class="folder-size"></div>
+                  </div>
+                  <div class="windows-folder-list d-flex items-center justify-between hidden-folder">
+                    <div class="folder-name d-flex items-center"><img src="icons/Custom Default (No Shadow).ico" alt=""> $WinREAgent</div>
+                    <div class="folder-date flex-auto">4/22/2021 11:22 AM</div>
+                    <div class="folder-type">File Folder</div>
+                    <div class="folder-size"></div>
+                  </div>
+                  <div class="windows-folder-list d-flex items-center justify-between">
+                    <div class="folder-name d-flex items-center"><img src="icons/Custom Default (No Shadow).ico" alt=""> cmder</div>
+                    <div class="folder-date flex-auto">7/6/2021 2:37 AM</div>
+                    <div class="folder-type">File Folder</div>
+                    <div class="folder-size"></div>
+                  </div>
+                  <div class="windows-folder-list d-flex items-center justify-between">
+                    <div class="folder-name d-flex items-center"><img src="bdtanbir/windows-explore/blob/main/assets/images/text-file-icon.png" alt=""> cbs.log</div>
+                    <div class="folder-date flex-auto">1/9/2020 7:20 PM</div>
+                    <div class="folder-type">Text Document</div>
+                    <div class="folder-size">1 KB</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="folder-number-and-view-list-icon">
+              <span class="folder-number-count">4 items</span>
+              <div class="folder-number-and-view-list-icon-right">
+                <img src="icons/shell32_62998.ico" alt="">
+                <img src="icons/shell32_63008.ico" alt="">
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="desk_applications" id="app-shortcuts">
+        <div class="desktop-app active-app" data-window="f">
+          <img src="icons/userDir.png">
+          <h1>Stealthzer</h1>
+        </div>
+        <div class="desktop-app active-app">
+          <img src="icons/bin0.png">
+          <h1>Recycle Bin</h1>
+        </div>
+        <div class="desktop-app active-app">
+          <img src="icons/Explorer.ico">
+          <h1>File Explorer</h1>
+        </div>
+        <div class="desktop-app active-app">
+          <img src="icons/store.png">
+          <h1>Store</h1>
+        </div>
+        <div class="desktop-app active-app">
+          <img src="icons/edge.png">
+          <h1>Edge</h1>
+        </div>
+        <div class="desktop-app active-app">
+          <img src="icons/github.png">
+          <h1>Github</h1>
+        </div>
+        <div class="desktop-app active-app last-desktop_app last-desktop_app1">
+          <img src="icons/spotify.png">
+          <h1>Spotify</h1>
+        </div>
+        <div class="desktop-app active-app last-desktop_app last-desktop_app2">
+          <img src="icons/discord.png">
+          <h1>Discord</h1>
+        </div>
+      </div>
+    </div>
+    <div class="taskbar">
+      <div id="taskbar">
+        <div class="desktop-app" id="startbutton"><img src="icons/home.png"></div>
+        <div class="desktop-app" id="searchbutton"><img src="icons/search.png"></div>
+        <div class="desktop-app" id="widgetbutton"><img src="icons/widget.png"></div>
+        <div class="desktop-app" id="settingsbutton"><img src="icons/settings.png"></div>
+        <div class="desktop-app active-app" onclick="openclosecom()" data-window="file-explorer"><img src="icons/Explorer.ico"></div>
+        <div class="desktop-app active-app" data-window="c"><img src="icons/edge.png"></div>
+        <div class="desktop-app active-app" data-window="e"><img src="icons/store.png"></div>
+        <div class="desktop-app active-app" data-window="g"><img src="icons/code.png"></div>
+      </div>
+      <div class="task-right">
+        <div id="taskbar-app-button" class="taskbar-inline tak-hh task-tt"><i class='bx bx-chevron-up'></i></div>
+        <div class="task_imgs" id="quickbutton">
+          <img src="icons/wifi.png">
+          <img src="icons/battery.png">
+          <img src="icons/audio3.png">
+        </div>
+        <div id="calendarbutton" class="clan tak-hh taskbar-inline">
+          <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+          <h1>10/30/2021</h1>
+      </div>
+      <div id="quickbutton" class="taskbar-inline tak-hh msh"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container2">
+    <div class="container_2">
+      <div id="MyClockDisplay2" class="clock" onload="showTime2()"></div>
+      <h1>Monday, November 8</h1>
+    </div>
+    <div class="container_3">
+      
+      <div class="mobile_img"></div>
+      <h1>Sorry this page is not available for android, we are still working on a fix</h1>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+<center><font size="2">Thankyou for visiting this sight, Stealthzer team<a href="Stealthzer.github.io">Our website</a></font></center></body>
+</html>
